@@ -37,3 +37,29 @@ let dogBobic = new Dog("Bobic", 6, 7);
 
 catTom.meow()
 dogBobic.wow()
+
+function Car(model, producer, max_speed, weight){
+    this.model = model,
+    this.producer = producer,
+    this.max_speed = max_speed,
+    this.weight = weight
+}
+Car.prototype.drive=function (){
+    console.log(`The car ${this.model} is driving`)
+}
+
+function SportCar(model, producer, max_speed, weight, acceleration){
+    Car.call(this,model, producer, max_speed, weight)
+    this.acceleration = acceleration
+}
+SportCar.prototype = Object(Car.prototype)
+SportCar.prototype.constructor = SportCar
+
+
+const myCar = new Car('911', 'Porshe', 280, 2500, 9.5)
+myCar.drive()
+console.log(myCar.constructor)
+
+
+
+
