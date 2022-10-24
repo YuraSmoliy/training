@@ -52,7 +52,7 @@ function SportCar(model, producer, max_speed, weight, acceleration){
     Car.call(this,model, producer, max_speed, weight)
     this.acceleration = acceleration
 }
-SportCar.prototype = Object(Car.prototype)
+SportCar.prototype = Object.create(Car.prototype)
 SportCar.prototype.constructor = SportCar
 
 
